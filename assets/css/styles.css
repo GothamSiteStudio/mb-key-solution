@@ -11,6 +11,29 @@
   --border: #26304a;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --radius: 16px;
+  --focus-ring: 0 0 0 3px rgba(76, 195, 255, 0.5);
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #4a5568;
+    --muted: #d1d5db;
+  }
 }
 
 * {
@@ -38,6 +61,24 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color var(--transition-fast), outline var(--transition-fast);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Improved link visibility in content */
+main a:not(.button):not(.nav-cta):not(.card-link) {
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: 3px;
+}
+
+main a:not(.button):hover {
+  color: var(--primary);
 }
 
 .container {
@@ -51,14 +92,26 @@ a {
   top: 0;
   background: var(--primary);
   color: #0b0d12;
-  padding: 10px 16px;
+  padding: 12px 20px;
   border-radius: 8px;
-  z-index: 999;
+  z-index: 9999;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .skip-link:focus {
   left: 16px;
   top: 16px;
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Visible focus for interactive elements */
+button:focus-visible,
+.button:focus-visible,
+.nav-cta:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .topbar {
@@ -169,11 +222,26 @@ a {
   border-radius: 12px;
   font-weight: 700;
   border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
 }
 
 .button.primary {
   background: var(--primary);
   color: #04111d;
+}
+
+.button.primary:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 8px 25px rgba(76, 195, 255, 0.3);
 }
 
 .button.secondary {
@@ -182,12 +250,38 @@ a {
   border-color: var(--border);
 }
 
+.button.secondary:hover {
+  background: rgba(76, 195, 255, 0.1);
+  border-color: var(--primary);
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
   box-shadow: var(--shadow);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  border-color: rgba(76, 195, 255, 0.3);
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.card-link:hover {
+  color: var(--accent);
+  transform: translateX(4px);
 }
 
 .section {
@@ -294,6 +388,33 @@ a {
 
 .footer a {
   color: var(--text);
+  transition: color var(--transition-fast);
+}
+
+.footer a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+.footer address {
+  font-style: normal;
+}
+
+.social-links li {
+  transition: transform var(--transition-fast);
+}
+
+.social-links li:hover {
+  transform: translateX(4px);
 }
 
 .footer small {
@@ -367,6 +488,13 @@ a {
     color: var(--text);
     padding: 8px 12px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .nav-toggle:hover {
+    background: rgba(76, 195, 255, 0.1);
+    border-color: var(--primary);
   }
 
   .nav.mobile-open .nav-links {
@@ -379,7 +507,21 @@ a {
     position: absolute;
     right: 4%;
     top: 70px;
-    z-index: 10;
+    z-index: 100;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    animation: slideDown 0.2s ease-out;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -387,4 +529,86 @@ a {
   .nav-toggle {
     display: none;
   }
+}
+
+/* Scroll animations */
+.animate-target {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Print styles for better UX */
+@media print {
+  .header,
+  .footer,
+  .nav-toggle,
+  .hero-actions,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    background: white;
+    box-shadow: none;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 13, 18, 0.8);
+  display: grid;
+  place-items: center;
+}
+
+/* Form accessibility improvements */
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--focus-ring);
+}
+
+.form input:invalid:not(:placeholder-shown),
+.form textarea:invalid:not(:placeholder-shown) {
+  border-color: #ff6b6b;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

@@ -1,4 +1,26 @@
+# MB Key Solution - robots.txt
+# https://www.mbkeysolution.com
+
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://www.mbkeysolution.com/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow crawling of assets (optional, remove if needed)
+# Disallow: /assets/
+
+# Allow Google to access CSS and JS for rendering
+User-agent: Googlebot
+Allow: /assets/css/
+Allow: /assets/js/

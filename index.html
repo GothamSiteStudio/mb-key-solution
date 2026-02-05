@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4cc3ff" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="MB Key Solution LLC" />
+  <meta name="geo.region" content="US-CT" />
+  <meta name="geo.placename" content="New Haven" />
+  <meta name="format-detection" content="telephone=yes" />
   <title>MB Key Solution | Mobile Automotive Locksmith in New Haven, CT</title>
-  <meta name="description" content="MB Key Solution is a licensed, fully mobile automotive locksmith serving New Haven, CT and surrounding cities. Fast car key replacement, transponder programming, key fob repair, ignition repair, and 24/7 lockout help." />
+  <meta name="description" content="MB Key Solution is a licensed, fully mobile automotive locksmith serving New Haven, CT and surrounding cities. Fast car key replacement, transponder programming, key fob repair, ignition repair, and 24/7 lockout help. Call 203-258-3952." />
+  <meta name="keywords" content="locksmith New Haven CT, car key replacement, automotive locksmith, key fob programming, transponder key, emergency lockout, mobile locksmith, car key cutting, ignition repair, ECU repair Connecticut" />
   <link rel="canonical" href="https://www.mbkeysolution.com/" />
-  <meta property="og:title" content="MB Key Solution | Mobile Automotive Locksmith" />
-  <meta property="og:description" content="Fast, mobile car key solutions in New Haven, CT. 20+ years of experience, licensed and insured." />
+  <meta property="og:title" content="MB Key Solution | Mobile Automotive Locksmith in New Haven, CT" />
+  <meta property="og:description" content="Fast, mobile car key solutions in New Haven, CT. 20+ years of experience, licensed and insured. Call 203-258-3952 for 24/7 service." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mbkeysolution.com/" />
   <meta property="og:site_name" content="MB Key Solution" />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MB Key Solution | Mobile Automotive Locksmith" />
+  <meta name="twitter:description" content="Fast, mobile car key solutions in New Haven, CT. 24/7 emergency lockout service." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -80,64 +90,68 @@
     <div class="container nav">
       <a class="logo" href="index.html">MB <span>Key</span> Solution</a>
       <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="services.html">Services</a>
         <a href="ecu-service.html">ECU Service CT</a>
         <a href="service-area.html">Service Area</a>
         <a href="founder.html">The Founder</a>
         <a href="about.html">About</a>
         <a href="guarantee.html">90-Day Guarantee</a>
-        <a href="book-online.html" class="nav-cta">Book Now</a>
+        <a href="book-online.html" class="nav-cta" role="button">Book Now</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="container hero-grid">
         <div>
-          <span class="tag">Your Friendly Local Locksmith</span>
-          <h1>Mobile Automotive Locksmith in New Haven, CT</h1>
+          <span class="tag" aria-label="Tagline">Your Friendly Local Locksmith</span>
+          <h1 id="hero-heading">Mobile Automotive Locksmith in New Haven, CT</h1>
           <p>MB Key Solution delivers fast, dealership-level car key services at your location. From lost keys and key fob programming to ignition repair and emergency lockouts, we bring the tools and expertise to get you back on the road—quickly and affordably.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="tel:+12032583952">Call 203-258-3952</a>
+          <div class="hero-actions" role="group" aria-label="Call to action buttons">
+            <a class="button primary" href="tel:+12032583952" aria-label="Call us now at 203-258-3952"><span aria-hidden="true">📞</span> Call 203-258-3952</a>
             <a class="button secondary" href="services.html">View Services</a>
           </div>
         </div>
-        <div class="card">
-          <h3>Why drivers choose us</h3>
-          <ul class="list">
+        <aside class="card" aria-labelledby="why-choose-heading">
+          <h3 id="why-choose-heading">Why drivers choose us</h3>
+          <ul class="list" role="list">
             <li>20+ years of locksmith expertise</li>
             <li>Fully mobile, no towing required</li>
             <li>Dealer-level programming tools</li>
             <li>Fast response across New Haven County</li>
             <li>Transparent, competitive pricing</li>
           </ul>
-          <div style="margin-top:18px;" class="notice">Average rating 5.0 · 10 reviews</div>
-        </div>
+          <div style="margin-top:18px;" class="notice" role="status" aria-live="polite">⭐ Average rating 5.0 · 10 reviews</div>
+        </aside>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" aria-labelledby="services-heading">
       <div class="container">
-        <h2>Complete Locksmith Services</h2>
+        <h2 id="services-heading">Complete Locksmith Services</h2>
         <p class="lead">We handle automotive, residential, and commercial security needs with a focus on speed, accuracy, and long-term reliability.</p>
-        <div class="grid-3">
-          <div class="card">
-            <div class="icon">🚗</div>
+        <div class="grid-3" role="list">
+          <article class="card" role="listitem">
+            <div class="icon" aria-hidden="true">🚗</div>
             <h3>Car Key Solutions</h3>
             <p>On-the-spot key replacement, transponder programming, key fob repair, smart key programming, and ignition services.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🏠</div>
+            <a href="services.html#automotive" class="card-link" aria-label="Learn more about car key solutions">Learn more →</a>
+          </article>
+          <article class="card" role="listitem">
+            <div class="icon" aria-hidden="true">🏠</div>
             <h3>Residential Protection</h3>
             <p>Lock installation, rekeying, smart locks, emergency home lockouts, and security upgrades tailored to your home.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🏢</div>
+            <a href="services.html#residential" class="card-link" aria-label="Learn more about residential protection">Learn more →</a>
+          </article>
+          <article class="card" role="listitem">
+            <div class="icon" aria-hidden="true">🏢</div>
             <h3>Commercial Security</h3>
             <p>Master key systems, access control, high-security locks, and rapid lockout response for businesses.</p>
-          </div>
+            <a href="services.html#commercial" class="card-link" aria-label="Learn more about commercial security">Learn more →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -207,50 +221,52 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
           <h3>MB Key Solution LLC</h3>
           <p>Licensed mobile locksmith serving New Haven, CT and surrounding cities.</p>
-          <p><strong>Phone:</strong> <a href="tel:+12032583952">203-258-3952</a><br />
-          <strong>Email:</strong> <a href="mailto:Moranbodek@mbkeysolution.com">Moranbodek@mbkeysolution.com</a></p>
+          <address>
+            <p><strong>Phone:</strong> <a href="tel:+12032583952" aria-label="Call MB Key Solution">203-258-3952</a><br />
+            <strong>Email:</strong> <a href="mailto:Moranbodek@mbkeysolution.com" aria-label="Email MB Key Solution">Moranbodek@mbkeysolution.com</a></p>
+          </address>
           <p><strong>License:</strong> L.C.K.0000372</p>
         </div>
-        <div>
+        <nav aria-label="Services navigation">
           <h4>Services</h4>
           <ul class="list">
-            <li>Car key replacement</li>
-            <li>Transponder programming</li>
-            <li>Key fob repair</li>
-            <li>Ignition repair</li>
+            <li><a href="services.html#car-key">Car key replacement</a></li>
+            <li><a href="services.html#transponder">Transponder programming</a></li>
+            <li><a href="services.html#fob">Key fob repair</a></li>
+            <li><a href="services.html#ignition">Ignition repair</a></li>
           </ul>
-        </div>
-        <div>
+        </nav>
+        <nav aria-label="Quick links navigation">
           <h4>Quick Links</h4>
           <ul class="list">
-            <li><a href="services.html">Service We Offer</a></li>
+            <li><a href="services.html">Services We Offer</a></li>
             <li><a href="ecu-service.html">ECU Service CT</a></li>
             <li><a href="service-area.html">Service Area</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="guarantee.html">90-Day Guarantee</a></li>
             <li><a href="blog/index.html">Blog</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
           <h4>Stay Connected</h4>
-          <ul class="list">
-            <li><a href="https://www.youtube.com/@MBkeysolutionLLC">YouTube</a></li>
-            <li><a href="https://yelp.to/q4MZV_PFwb">Yelp</a></li>
-            <li><a href="https://www.instagram.com/mbkeysolution/profilecard/?igsh=aGZtaWZ6OW40azFi">Instagram</a></li>
-            <li><a href="https://www.facebook.com/share/186bwQYWv3/?mibextid=wwXIfr">Facebook</a></li>
-            <li><a href="https://x.com/mbkeysolution?s=21&t=XZIpSljfIkFvyxCeJlvcIw">X (Twitter)</a></li>
+          <ul class="list social-links" aria-label="Social media links">
+            <li><a href="https://www.youtube.com/@MBkeysolutionLLC" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">YouTube</a></li>
+            <li><a href="https://yelp.to/q4MZV_PFwb" target="_blank" rel="noopener noreferrer" aria-label="Read our Yelp reviews">Yelp</a></li>
+            <li><a href="https://www.instagram.com/mbkeysolution/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/186bwQYWv3/" target="_blank" rel="noopener noreferrer" aria-label="Like us on Facebook">Facebook</a></li>
+            <li><a href="https://x.com/mbkeysolution" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">X (Twitter)</a></li>
           </ul>
         </div>
       </div>
-      <small>© 2025 MB Key Solution. All rights reserved.</small>
-      <div style="margin-top:8px;">
-        <small>Website designed by <a href="https://gothamsitestudio.com/">Gotham Site Studio</a></small>
+      <div class="footer-bottom">
+        <small>© 2026 MB Key Solution. All rights reserved.</small>
+        <small>Website designed by <a href="https://gothamsitestudio.com/" target="_blank" rel="noopener noreferrer">Gotham Site Studio</a></small>
       </div>
     </div>
   </footer>
