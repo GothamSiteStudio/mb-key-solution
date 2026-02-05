@@ -379,6 +379,21 @@ button:focus-visible,
   color: var(--muted);
 }
 
+.footer-map {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.footer-map h4 {
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.footer-map iframe {
+  max-width: 100%;
+  box-shadow: var(--shadow);
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
