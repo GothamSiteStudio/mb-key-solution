@@ -72,5 +72,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://www.mbkeysolution.com/privacy-policy.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
